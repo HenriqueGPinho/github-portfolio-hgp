@@ -3,7 +3,11 @@ import Title from '../../components/Title'
 import Paragraph from '../../components/Paragraph'
 import { SidebarContainer, Description, ThemeButton } from './styles'
 
-export default function Sidebar() {
+type Props = {
+  toggleTheme: () => void
+}
+
+export default function Sidebar(props: Props) {
   return (
     <aside>
       <SidebarContainer>
@@ -13,7 +17,7 @@ export default function Sidebar() {
         <Description fontSize={12} color={'main'}>
           Engenheiro Front-End
         </Description>
-        <ThemeButton>Trocar tema</ThemeButton>
+        <ThemeButton onClick={props.toggleTheme}>Trocar tema</ThemeButton>
       </SidebarContainer>
     </aside>
   )
